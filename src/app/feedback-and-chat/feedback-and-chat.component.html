@@ -1,0 +1,50 @@
+<article>    
+  <h2>Send me a message or use the chat below to learn some cool facts of the animals in the photos</h2>
+  <section class="container">
+    <form ngNativeValidate [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="row" *ngIf="showMsg">
+        <div class="row">
+          <p>
+            <strong>Thanks for your message!</strong>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="name">Full Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="fname" placeholder="Your name.." formControlName="fullname" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lemail">Email</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lemail" placeholder="Your email.." formControlName="email" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="comments">Comments</label>
+        </div>
+        <div class="col-75">
+          <textarea id="subject" formControlName="comments" placeholder="Write something.." style="height:200px" required></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <button type="submit" class="submit">Submit</button>
+      </div>
+    </form>
+  </section>
+</article>
+
+<df-messenger
+  df-cx="true"
+  location="us-central1"
+  chat-title="Chat with Jimbo!"
+  intent="messanger-welcome-event"
+  agent-id="762af666-79f7-4527-86c5-9ca06f72c317"
+  language-code="en"
+></df-messenger>

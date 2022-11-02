@@ -1,0 +1,2 @@
+runtime: nodejs16
+service: photo-gallery-app
