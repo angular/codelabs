@@ -1,0 +1,71 @@
+/* Add application styles & imports to this file! */
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+html {
+  background: #202124ff;
+  color: white;
+
+  font-family: 'Fira Mono', monospace;
+
+  padding-top: 1em;
+}
+
+body {
+  z-index: -2;
+  position: relative;
+  border-radius: 20% 20% 49% 49%/3% 3% 9.5% 9.5%;
+  background-image: linear-gradient(to right bottom, #38a852, #1c6c2e);
+  width: clamp(15rem, 96vw, 35rem);
+  aspect-ratio: 10/17;
+  margin: auto;
+  box-shadow: inset 1px 5px 5px -1px #fff9, inset -1px -2px 5px -1px #00000080,
+    0 1px 1px #00000013, 0 2px 2px #00000014, 0 4px 4px #0000001a,
+    0 8px 8px #0003, 0 16px 16px #00000038;
+}
+
+.brand {
+  font-size: clamp(10px, 3vw, 20px);
+  position: absolute;
+  top: 1.5%;
+  left: 10%;
+  text-shadow: -1px -1px 1.2px rgb(255 255 255 / 50%),
+    1px 1px 1px rgb(1 1 1 / 7%);
+  color: #47c063;
+}
+
+.sound-grid {
+  z-index: -1;
+  width: 20%;
+  aspect-ratio: 1/1;
+  position: absolute;
+  right: 4%;
+  bottom: 6%;
+  transform: skew(-2deg, -7deg) rotate(-5deg);
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.dot {
+  border-radius: 50%;
+  background: #24903d;
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  box-shadow: inset -1px -2px 1px -1px #fff9, inset 1px 1px 1px -1px #02020299;
+}
+
+.t {
+  background: transparent;
+  box-shadow: none;
+}
+
+.b {
+  background: #000000aa;
+  box-shadow: inset -1px -1px 1px -1px #fffc, inset 1px 1px 1px -1px #020202;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
