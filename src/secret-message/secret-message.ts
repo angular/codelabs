@@ -11,12 +11,14 @@ import { CipherService } from '../cipher/service.cipher';
   selector: 'secret-message',
   standalone: true,
   imports: [CommonModule, MatDialogModule, MatButtonModule],
+  // TODO(1): Define your first signal()
+  // TODO(2): Define your first computed()
   template: `
   <div class="screen">
     <div class="message">
       <h4>Decipher a secret message from {{ this.sender }}:</h4>
       <h1>
-        <span *ngFor="let char of this.messages.solvedMessage().split(''); index as i;" [class.unsolved]="this.messages.solvedMessage()[i] !== this.messages.superSecretMessage()[i]" >{{ char }}</span>
+        <span *ngFor="let char of this.messages.solvedMessage.split(''); index as i;" [class.unsolved]="this.messages.solvedMessage[i] !== this.messages.superSecretMessage[i]" >{{ char }}</span>
       </h1>
     </div>
     <button class="new-message-button" (click)="openDialog()">Customize</button>
@@ -139,7 +141,8 @@ export class SecretMessageComponent implements OnInit {
     let url = this.platformLocation.hash.substring(1);
     if (url.length > 0) {
       let decoded: MessageDialogData = JSON.parse(atob(url));
-      this.messages.superSecretMessage.set(decoded.message);
+      // TODO(1): Define your first signal()
+      this.messages.superSecretMessage = decoded.message;
       this.sender = decoded.sender;
     }
   }
@@ -157,7 +160,8 @@ export class SecretMessageComponent implements OnInit {
 
       if (message != undefined && message.length > 0) {
         this.platformLocation.pushState('test', 'test', '#' + encoded);
-        this.messages.superSecretMessage.set(message);
+        // TODO(1): Define your first signal()
+        this.messages.superSecretMessage = message;
       }
 
       if (sender != undefined && sender.length > 0) {

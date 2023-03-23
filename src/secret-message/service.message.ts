@@ -5,23 +5,20 @@ import { CipherKey, CipherService } from '../cipher/service.cipher';
   providedIn: 'root',
 })
 export class MessageService {
-  superSecretMessage = signal(
-    'Angular Signals are in developer preview in v16 today!'
-  );
+  superSecretMessage = 'Angular Signals are in developer preview in v16 today!';
 
   secretMessage = computed(() =>
-    this.translateSecretMessage(this.superSecretMessage(), this.cipher.cipher())
+    this.translateMessage(this.superSecretMessage, this.cipher.cipher())
   );
-  solvedMessage = computed(() =>
-    this.translateSecretMessage(
-      this.secretMessage(),
-      this.cipher.decodedCipher()
-    )
+  // TODO(2): Define your first computed()
+  solvedMessage = this.translateMessage(
+    this.secretMessage(),
+    this.cipher.decodedCipher()
   );
 
   constructor(private cipher: CipherService) {}
 
-  translateSecretMessage(code: string, ciph: CipherKey[]): string {
+  translateMessage(code: string, ciph: CipherKey[]): string {
     let encoded = '';
 
     code.split('').forEach((char) => {
