@@ -9,7 +9,7 @@
 `cd homes-app`
 
 - Install the depencies
-`npm install 
+`npm install`
 
 - Run the application 
 `ng serve`
