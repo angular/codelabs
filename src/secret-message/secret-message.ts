@@ -111,7 +111,6 @@ import { CipherService } from '../cipher/service.cipher';
       font-family: "Martian Mono", sans-serif;
       font-size: clamp(10px, 3vw, 20px);
 
-      // color: #c0e0c7;
       text-shadow: -1px -1px 1.2px rgb(255 255 255 / 50%), 1px 1px 1px rgb(1 1 1 / 7%);
       background: transparent;
 
