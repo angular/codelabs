@@ -80,7 +80,8 @@
       }
     }
   },
+  "defaultProject": "demo",
   "cli": {
-    "analytics": "18012cd0-a79b-40e1-98e7-bce87738b9cb"
+    "analytics": false
   }
 }
