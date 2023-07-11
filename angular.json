@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "tsConfig": "tsconfig.json",
             "outputPath": "dist/demo",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -79,5 +80,7 @@
       }
     }
   },
-  "defaultProject": "demo"
+  "cli": {
+    "analytics": "18012cd0-a79b-40e1-98e7-bce87738b9cb"
+  }
 }
