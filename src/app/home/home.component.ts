@@ -11,12 +11,12 @@ import { HousingService } from '../housing.service'; // this is the service that
   template: `
     <section>
       <form action="">
-        <input type="text" placeholder="Filter by City">
-        <button class="primary" type="button">Search</button>
+        <input type="text" placeholder="Filter by City" #filter> 
+        <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
       </form>
     </section>
     <section class="results">
-      <app-housing-location *ngFor="let housingLocation of housingLocationList"
+      <app-housing-location *ngFor="let housingLocation of filteredLocationList"
       [housingLocation]="housingLocation"></app-housing-location> 
     </section>
     
@@ -26,13 +26,22 @@ import { HousingService } from '../housing.service'; // this is the service that
 export class HomeComponent {
   housingLocationList: HousingLocation[] = []; // this is an array of housing locations.
   housingService: HousingService = inject(HousingService); // inject is a function that is used to inject a dependency into a class.
+  filteredLocationList: HousingLocation[] = []; // this is an array of housing locations that are filtered.
 
   constructor() {
    this.housingService.getallHousingLocations().then((housingLocationList: HousingLocation[]) => {
     this.housingLocationList = housingLocationList;
+    this.filteredLocationList = housingLocationList;
    });
+}
 
 
+filterResults(text: string) {
+  if (!text) this.filteredLocationList = this.housingLocationList;
+
+  this.filteredLocationList = this.housingLocationList.filter(
+    housingLocation => housingLocation?.city.toLowerCase().includes(text.toLowerCase())
+  );
 }
 
 }
