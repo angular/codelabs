@@ -1,0 +1,13 @@
+/* Put these src/app/app.component.css */
+:host {
+    --content-padding: 10px;
+  }
+  header {
+    display: block;
+    height: 60px;
+    padding: var(--content-padding);
+    box-shadow: 0px 5px 25px var(--shadow-color);
+  }
+  .content {
+    padding: var(--content-padding);
+  }
