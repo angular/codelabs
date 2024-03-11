@@ -3,7 +3,7 @@
 // This is useful to ensure deterministic runs on CI and locally. This file is ignored when creating
 // StackBlitz examples and ZIP archives for each example.
 
-const {config} = require('./protractor.conf.js');
+const {config} = require("./protractor.conf.js");
 
 exports.config = {
   ...config,
@@ -14,7 +14,7 @@ exports.config = {
       ...config.capabilities.chromeOptions,
       binary: process.env.CHROME_BIN,
       // See /integration/README.md#browser-tests for more info on these args
-      args: ['--no-sandbox', '--headless', '--disable-gpu', '--disable-dev-shm-usage', '--hide-scrollbars', '--mute-audio'],
+      args: ["--no-sandbox", "--headless", "--disable-gpu", "--disable-dev-shm-usage", "--hide-scrollbars", "--mute-audio"],
     },
   },
 };

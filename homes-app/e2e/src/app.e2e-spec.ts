@@ -1,11 +1,11 @@
-import { browser, element, by, logging } from 'protractor';
+import { browser, element, by, logging } from "protractor";
 
-describe('first-app-lesson-01 app', () => {
+describe("first-app-lesson-01 app", () => {
 
-  beforeEach(() => browser.get(''));
+  beforeEach(() => browser.get(""));
 
-  it('should display correct title', async () => {
-    expect(await element.all(by.css('h1')).get(0).getText()).toEqual('Hello world!');
+  it("should display correct title", async () => {
+    expect(await element.all(by.css("h1")).get(0).getText()).toEqual("Hello world!");
   });
 
   afterEach(async () => {
